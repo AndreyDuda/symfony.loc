@@ -45,4 +45,18 @@ services:
       - "MYSQL_USER=symfony"
       - "MYSQL_PASSWORD=symfony"
       - "MYSQL_DATABASE=symfony"
+  manager-postgres:
+    image: postgres:11.2-alpine
+    container_name: symfony-pgres
+    volumes:
+      - ./docker/manager-postgres:/var/lib/manager-postgres
+    environment:
+      POSTGRES_USER: symfony
+      POSTGRES_PASSWORD: symfony
+      POSTGRES_DB: symfony
+    ports:
+      -"54321:5432"
 
+volumes:
+  manager-postgres:
+  composer:

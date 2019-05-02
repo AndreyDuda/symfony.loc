@@ -24,7 +24,6 @@ services:
       - ./:/var/www
     depends_on:
       - mysql
-      - manager-postgres
   php-cli:
     build:
       context: ./
@@ -34,7 +33,6 @@ services:
       - ./:/var/www
     depends_on:
       - mysql
-      - manager-postgres
   mysql:
     image: mysql:5.7
     container_name: symfony-mysql
@@ -47,19 +45,4 @@ services:
       - "MYSQL_USER=symfony"
       - "MYSQL_PASSWORD=symfony"
       - "MYSQL_DATABASE=symfony"
-  manager-postgres:
-    image: postgres:11.2
-    container_name: symfony-pgres
-    volumes:
-      - ./docker/manager-postgres:/var/lib/manager-postgres
-    environment:
-      POSTGRES_ROOT_PASSWORD: 123
-      POSTGRES_USER: symfony
-      POSTGRES_PASSWORD: symfony
-      POSTGRES_DB: symfony
-    ports:
-      - "5432:5432"
 
-volumes:
-  manager-postgres:
-  composer:

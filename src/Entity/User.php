@@ -8,8 +8,8 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
- * @ORM\Table(name="public.user")
- * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
+ * @ORM\Table(name="users")
+ * @UniqueEntity(fields={"email"}, message="The is already an accaunt with this email")
  */
 class User implements UserInterface
 {

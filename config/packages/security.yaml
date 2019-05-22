@@ -3,6 +3,7 @@ security:
         App\Entity\User:
             algorithm: bcrypt
 
+
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         # used to reload user from session & other features (e.g. switch_user)
@@ -10,6 +11,7 @@ security:
             entity:
                 class: App\Entity\User
                 property: email
+        # used to reload user from session & other features (e.g. switch_user)
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -37,6 +39,7 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-         - { path: ^/ligin, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-         - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+         # - { path: ^/ligin, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+         #- { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
          #- { path: ^/, roles: ROLE_USER }
+         #- { path: ^/, roles: IS_AUTHENTICATED_FULLY }

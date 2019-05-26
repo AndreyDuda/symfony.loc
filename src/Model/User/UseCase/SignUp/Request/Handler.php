@@ -4,33 +4,78 @@ declare(strict_types=1);
 
 namespace App\Model\User\UseCase\SignUp\Request;
 
-use Doctrine\ORM\EntityManagerInterface;
+use App\Model\Flusher;
+use App\Model\User\Entity\User\Email;
+use App\Model\User\Entity\User\Id;
 use App\Model\User\Entity\User\User;
+use App\Model\User\Entity\User\UserRepository;
+use App\Model\User\Entity\User\PasswordHasher;
+use App\Model\User\Service\ConfirmTokenizer;
+use App\Model\User\Service\ConfirmTokenSender;
 use Zend\EventManager\Exception\DomainException;
 
 class Handler
 {
-	private $em;
+	/**
+	 * @var UserRepository
+	 */
+	private $users;
 	
-	public function __construct(EntityManagerInterface $em)
+	/**
+	 * @var PasswordHasher
+	 */
+	private $hasher;
+	
+	/**
+	 * @var Flusher
+	 */
+	private $flusher;
+	
+	/**
+	 * @var ConfirmTokenizer
+	 */
+	private $tokenizer;
+	
+	/**
+	 * @var ConfirmTokenSender
+	 */
+	private $sender;
+	
+	public function __construct(
+		UserRepository $users,
+		Passwordhasher $hasher,
+		ConfirmTokenizer $tokenizer,
+		ConfirmTokenSender $sender,
+		Flusher $flusher
+	)
 	{
-		$this->em = $em;
+		$this->users 	 = $users;
+		$this->hasher 	 = $hasher;
+		$this->flusher   = $flusher;
+		$this->tokenizer = $tokenizer;
+		$this->sender 	 = $sender;
 	}
 	
 	public function handle(Command $command): void
 	{
-		$email = mb_strtolower($command->email);
+		$email = new Email($command->email);
 		
-		if ($this->em->getRepository(User::class)->findBy(['email' => $email])) {
+		if ($this->users->hasByEmail($email)) {
 			throw new DomainException('User already exists.');
 		}
 		
 		$user = new User(
+			Id::next(),
+			new \DateTimeImmutable(),
 			$email,
-			password_hash($command->password, PASSWORD_ARGON2I)
+			$this->hasher->hash($command->password),
+			$token = $this->tokenizer->generate()
 		);
 		
-		$this->em->persist($user);
-		$this->em->flush();
+		$this->users->add($user);
+		
+		$this->flusher->flush();
+		$this->sender->send($email, $token);
+		$this->flusher->flush();
 	}
 }

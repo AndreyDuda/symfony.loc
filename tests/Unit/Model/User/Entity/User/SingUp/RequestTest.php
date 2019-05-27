@@ -7,7 +7,6 @@ namespace App\Tests\Unit\Model\User\Entity\User\SingUp;
 use App\Model\User\Entity\User\Email;
 use App\Model\User\Entity\User\Id;
 use App\Model\User\Entity\User\User;
-use Ramsey\Uuid\Uuid;
 use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
 
 class RequestTest extends TestCase

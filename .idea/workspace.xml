@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="caa51e6b-1955-4792-9191-1c8e87b4044d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Model/Flusher.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/User/Entity/User/Email.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/User/Entity/User/Id.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/User/Entity/User/PasswordHasher.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/User/Entity/User/UserRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/User/Service/ConfirmTokenSender.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/User/Service/ConfirmTokenizer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/User/Service/PasswordHasher.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/symfony.loc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony.loc.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/User/UseCase/SignUp/Confirm/Command.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/User/UseCase/SignUp/Confirm/Handler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/User/Entity/User/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/User/Entity/User/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/User/UseCase/SignUp/Request/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/User/UseCase/SignUp/Request/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Unit/Model/User/Entity/User/SingUp/RequestTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/Model/User/Entity/User/SingUp/RequestTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,12 +37,21 @@
     <favorites_list name="symfony.loc" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/User/Entity/User/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
+            <state relative-caret-position="308">
               <caret line="77" column="28" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/User/Service/ConfirmTokenSender.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -63,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/User/Entity/User/Id.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+            <state relative-caret-position="323">
+              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
               <folding>
                 <element signature="e#46#67#0#PHP" expanded="true" />
               </folding>
@@ -75,7 +71,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/User/Entity/User/Email.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
+            <state relative-caret-position="304">
               <caret line="16" column="23" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="23" />
             </state>
           </provider>
@@ -84,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/User/UseCase/SignUp/Request/Handler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="75" column="8" lean-forward="true" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
+            <state relative-caret-position="238">
+              <caret line="65" column="8" lean-forward="true" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
               <folding>
                 <element signature="e#83#105#0#PHP" expanded="true" />
               </folding>
@@ -94,13 +90,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/Unit/Model/User/Entity/User/SingUp/RequestTest.php">
+        <entry file="file://$PROJECT_DIR$/src/Model/User/UseCase/SignUp/Confirm/Handler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+            <state relative-caret-position="270">
+              <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
               <folding>
-                <element signature="e#90#127#0#PHP" expanded="true" />
+                <element signature="e#57#79#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/User/Service/PasswordHasher.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/User/UseCase/SignUp/Confirm/Command.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Model/User/UseCase/SignUp/Request/Command.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -114,6 +137,7 @@
       <find>/login</find>
       <find>/register</find>
       <find>LoginFormAuthenticator&quot;</find>
+      <find>$command</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -156,9 +180,11 @@
         <option value="$PROJECT_DIR$/src/Model/Flusher.php" />
         <option value="$PROJECT_DIR$/src/Model/User/Service/ConfirmTokenizer.php" />
         <option value="$PROJECT_DIR$/src/Model/User/Service/ConfirmTokenSender.php" />
-        <option value="$PROJECT_DIR$/src/Model/User/UseCase/SignUp/Request/Handler.php" />
         <option value="$PROJECT_DIR$/src/Model/User/Entity/User/User.php" />
+        <option value="$PROJECT_DIR$/src/Model/User/UseCase/SignUp/Request/Handler.php" />
         <option value="$PROJECT_DIR$/tests/Unit/Model/User/Entity/User/SingUp/RequestTest.php" />
+        <option value="$PROJECT_DIR$/src/Model/User/UseCase/SignUp/Confirm/Command.php" />
+        <option value="$PROJECT_DIR$/src/Model/User/UseCase/SignUp/Confirm/Handler.php" />
       </list>
     </option>
   </component>
@@ -273,8 +299,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="318" />
-    <option name="y" value="122" />
+    <option name="x" value="590" />
+    <option name="y" value="251" />
     <option name="width" value="1313" />
     <option name="height" value="559" />
   </component>
@@ -284,7 +310,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -326,12 +351,45 @@
             <path>
               <item name="symfony.loc" type="b2602c69:ProjectViewProjectNode" />
               <item name="symfony.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="User" type="462c0819:PsiDirectoryNode" />
+              <item name="UseCase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="symfony.loc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="symfony.loc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="User" type="462c0819:PsiDirectoryNode" />
+              <item name="UseCase" type="462c0819:PsiDirectoryNode" />
+              <item name="SignUp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="symfony.loc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="symfony.loc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="User" type="462c0819:PsiDirectoryNode" />
+              <item name="UseCase" type="462c0819:PsiDirectoryNode" />
+              <item name="SignUp" type="462c0819:PsiDirectoryNode" />
+              <item name="Confirm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="symfony.loc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="symfony.loc" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+              <item name="User" type="462c0819:PsiDirectoryNode" />
+              <item name="UseCase" type="462c0819:PsiDirectoryNode" />
+              <item name="SignUp" type="462c0819:PsiDirectoryNode" />
+              <item name="Request" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -393,6 +451,8 @@
       <workItem from="1558537922955" duration="88000" />
       <workItem from="1558549331707" duration="6222000" />
       <workItem from="1558887097910" duration="13349000" />
+      <workItem from="1558980323696" duration="2486000" />
+      <workItem from="1558987606729" duration="2048000" />
     </task>
     <task id="LOCAL-00001" summary="first controller and view">
       <created>1556823156332</created>
@@ -475,7 +535,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63101000" />
+    <option name="totallyTimeSpent" value="67635000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -487,13 +547,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="318" y="122" width="1313" height="559" extended-state="0" />
+    <frame x="590" y="251" width="1313" height="559" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24108528" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.35426357" />
       <window_info id="Structure" order="1" show_stripe_button="false" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" show_stripe_button="false" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32948717" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -506,6 +565,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.6462396" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.50784755" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -574,20 +634,8 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/app/home.html.twig" />
-    <entry file="file://$PROJECT_DIR$/src/Controller/PostController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-220">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/PostController.php" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/Post.php" />
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
@@ -602,13 +650,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/PostType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/PostType.php" />
     <entry file="file://$PROJECT_DIR$/config/packages/twig.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -636,13 +678,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190502204535.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190502204535.php" />
     <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -653,52 +689,15 @@
     <entry file="file://$PROJECT_DIR$/templates/home/base.html.twig">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1387">
-          <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/RegistrationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="19" column="87" selection-start-line="19" selection-start-column="87" selection-end-line="19" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/SecurityController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190522193941.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="24" column="43" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" />
+    <entry file="file://$PROJECT_DIR$/src/Controller/RegistrationController.php" />
+    <entry file="file://$PROJECT_DIR$/src/Controller/SecurityController.php" />
+    <entry file="file://$PROJECT_DIR$/src/Migrations/Version20190522193941.php" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/User.php" />
     <entry file="file://$PROJECT_DIR$/config/packages/doctrine.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/User/UseCase/SignUp/Request/Command.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -726,34 +725,10 @@
     <entry file="file://$PROJECT_DIR$/src/Model/User/Entity/User/PasswordHasher.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/User/Entity/User/Id.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="e#46#67#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/User/Entity/User/Email.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/User/Entity/User/UserRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/User/Service/PasswordHasher.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -771,6 +746,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/User/Entity/User/Id.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="e#46#67#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/User/Entity/User/Email.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Unit/Model/User/Entity/User/SingUp/RequestTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+          <folding>
+            <element signature="e#90#127#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/User/Entity/User/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="77" column="28" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/User/Service/ConfirmTokenSender.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -778,29 +787,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/User/Service/PasswordHasher.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/User/UseCase/SignUp/Confirm/Command.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/User/UseCase/SignUp/Request/Command.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/User/UseCase/SignUp/Request/Handler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="75" column="8" lean-forward="true" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
+        <state relative-caret-position="238">
+          <caret line="65" column="8" lean-forward="true" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
           <folding>
             <element signature="e#83#105#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/User/Entity/User/User.php">
+    <entry file="file://$PROJECT_DIR$/src/Model/User/UseCase/SignUp/Confirm/Handler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="77" column="28" selection-start-line="77" selection-start-column="20" selection-end-line="77" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Unit/Model/User/Entity/User/SingUp/RequestTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+        <state relative-caret-position="270">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
           <folding>
-            <element signature="e#90#127#0#PHP" expanded="true" />
+            <element signature="e#57#79#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

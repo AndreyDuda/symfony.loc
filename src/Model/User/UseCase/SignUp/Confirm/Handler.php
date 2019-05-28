@@ -7,6 +7,9 @@ use App\Model\User\Entity\User\UserRepository;
 
 class Handler
 {
+	/**
+	 * @var UserRepository
+	 */
 	private $users;
 	private $flusher;
 	
@@ -15,4 +18,15 @@ class Handler
 		$this->users = $users;
 		$this->flusher = $flusher;
 	}
+	
+	public function handler(Command $command): void
+	{
+		if (!$user = $this->users->findByConfrmToken($command->token)) {
+			throw new \DomainException('Incorrect or confirm token.');
+		}
+		
+		$user->confirmSignUp();
+		$this->flusher->flush();
+	}
+	
 }

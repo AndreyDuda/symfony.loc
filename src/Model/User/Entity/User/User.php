@@ -149,6 +149,9 @@ class User
 	
 	public function requestPasswordReset(ResetToken $token, \DateTimeImmutable $date): void
 	{
+		if (!$this->isActive()) {
+			throw new \DomainException('User is nor active.');
+		}
 		if (!$this->email) {
 			throw new \DomainException('Email is not specified.');
 		}

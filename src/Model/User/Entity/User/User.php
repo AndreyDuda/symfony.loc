@@ -2,6 +2,7 @@
 
 namespace App\Model\User\Entity\User;
 
+use App\Model\User\Service\ResetToken;
 use Doctrine\Common\Collections\ArrayCollection;
 
 class User
@@ -25,7 +26,7 @@ class User
 	private $email;
 	
 	/**
-	 * @var string
+	 * @var string|null
 	 */
 	private $passwordHash;
 	
@@ -45,9 +46,9 @@ class User
 	private $network;
 	
 	/**
-	 * @var string
+	 * @var ResetToken|null
 	 */
-	private $indentity;
+	private $resetToken;
 	
 	public function __construct(Id $id, \DateTimeImmutable $date)
 	{
@@ -145,4 +146,17 @@ class User
 	{
 		return $this->status == self::STATUS_NEW;
 	}
+	
+	public function requestPasswordReset(ResetToken $token, \DateTimeImmutable $date): void
+	{
+		if (!$this->email) {
+			throw new \DomainException('Email is not specified.');
+		}
+		if ($this->resetToken && !$this->resetToken->isExpiredTo($date)) {
+			throw new \DomainException('Resetting is already requested.');
+		}
+		
+		$this->resetToken = $token;
+	}
+	
 }

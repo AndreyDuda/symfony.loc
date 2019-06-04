@@ -7,8 +7,9 @@ namespace App\Tests\Unit\Model\User\Entity\User\SingUp;
 use App\Model\User\Entity\User\Email;
 use App\Model\User\Entity\User\Id;
 use App\Model\User\Entity\User\User;
+use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
 
-class ConfirmTest
+class ConfirmTest extends TestCase
 {
 	public function testSuccess(): void
 	{
@@ -33,11 +34,14 @@ class ConfirmTest
 	
 	public function buildSignedUpUser(): User
 	{
-		return new User(
+		$user = new User(
 			Id::next(),
-			new \DateTimeImmutable(),
-			new Email('test@app.test'),
-			'hash',
+			new \DateTimeImmutable()
+		);
+		
+		return $user->signUpByEmail(
+			$email = new Email('test@app.test'),
+			$hash  = 'hash',
 			$token = 'token'
 		);
 	}
